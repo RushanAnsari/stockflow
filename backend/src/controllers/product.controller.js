@@ -1,18 +1,9 @@
+const productService = require("../services/product.service");
 const getProducts = (req, res) => {
+    const products = productService.getProducts();
     res.status(200).json({
         success: true,
-        data:[
-            {
-                id:101,
-                name:"Coca Cola",
-                selling_price: 40
-            },
-            {
-                id:102,
-                name: "Pepsi",
-                selling_price: 40
-            }
-        ]
+        data:products
     });
 };
 module.exports = {
